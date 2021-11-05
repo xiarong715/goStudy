@@ -1,0 +1,10 @@
+go build programstruct.go
+生成的程序名与文件名相同
+
+如果创建使用了module，则可用go build
+    $ go mod init programstruct
+    $ go build
+生成的程序名与模块名相同，即programstruct
+
+
+go build exercise.go
