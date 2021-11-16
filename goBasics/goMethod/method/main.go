@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"goMethod/geometry"
+	"method/geometry"
 )
 
 func main() {
@@ -12,4 +12,8 @@ func main() {
 	q := geometry.Point{X: 3, Y: 4}
 	fmt.Println(geometry.Distance(p, q))
 	fmt.Println(p.Distance(q))
+	fmt.Println("--------------------------------")
+	prim := geometry.Path{{1, 1}, {5, 1}, {5, 4}, {1, 1}}
+	fmt.Println(geometry.PathDistance(prim))
+	fmt.Println(prim.Distance())
 }
