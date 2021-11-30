@@ -24,12 +24,11 @@ func main() {
 		WriteTimeout: 3 * time.Second,
 		PoolTimeout:  4 * time.Second,
 
-		MaxRetries: 3,
+		MaxRetries:      3,
 		MinRetryBackoff: 8 * time.Millisecond,
 		MaxRetryBackoff: 512 * time.Millisecond,
 
 		MaxConnAge: 0 * time.Second,
-
 	})
 	defer rdb.Close()
 
@@ -39,5 +38,3 @@ func main() {
 func ReadRedis(key string, value interface{}) {
 	rdb.Set(rdb.Context(), key, value, 3*time.Second)
 }
-
-func 
