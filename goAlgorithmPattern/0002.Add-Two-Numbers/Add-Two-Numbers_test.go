@@ -5,18 +5,50 @@ import (
 	"testing"
 )
 
+type question struct {
+	params
+	ans
+}
+
+type params struct {
+	num1 int
+	num2 int
+}
+
+type ans struct {
+	num int
+}
+
+var qs []question = []question{
+	{
+		params{123, 234},
+		ans{357},
+	},
+	{
+		params{235, 111},
+		ans{346},
+	},
+	{
+		params{888, 111},
+		ans{999},
+	},
+}
+
 func TestAddTwoNums(t *testing.T) {
-	list1 := createLinkedListWithNum(235)
-	list2 := createLinkedListWithNum(111)
-	fmt.Print("list1: ")
-	printLinkedList(list1)
-	fmt.Print("list2: ")
-	printLinkedList(list2)
-	list := AddTwoNums(list1, list2)
-	fmt.Print("list: ")
-	printLinkedList(list)
-	if !isEqual(list, createLinkedListWithNum(346)) {
-		t.Error("return error")
+	for _, v := range qs {
+		list1 := createLinkedListWithNum(v.params.num1)
+		list2 := createLinkedListWithNum(v.params.num2)
+		fmt.Print("list1: ")
+		printLinkedList(list1)
+		fmt.Print("list2: ")
+		printLinkedList(list2)
+		list := AddTwoNums(list1, list2)
+		fmt.Print("list: ")
+		printLinkedList(list)
+		if !isEqual(list, createLinkedListWithNum(v.ans.num)) {
+			t.Error("return error")
+		}
+		fmt.Println("------------------------")
 	}
 }
 
