@@ -1,37 +1,34 @@
 package leetcode
 
-import "fmt"
-
 type LinkedList struct {
 	value int
 	next  *LinkedList
 }
 
 func createLinkedListWithNum(num int) *LinkedList {
-	var head LinkedList
-	fmt.Println(head)
-	var temp *LinkedList = nil
+	var head LinkedList = LinkedList{value: -1}
 	for num != 0 {
 		digit := num % 10
 		num = num / 10
-		fmt.Printf("%d ", digit)
-
+		insertNode(&head, &LinkedList{value: digit})
 	}
-	fmt.Println()
 	return &head
 }
 
-func createNode(digit int) *LinkedList {
-	return &LinkedList{value: digit}
+func insertNode(head *LinkedList, node *LinkedList) {
+	temp := head
+	for temp.next != nil {
+		temp = temp.next
+	}
+	temp.next = node
 }
 
 func AddTwoNums(a, b *LinkedList) *LinkedList {
-	list1 := a
-	list2 := b
+	list1 := a.next
+	list2 := b.next
 	carry := false
 	digit := 0
-	var head *LinkedList = nil
-	temp := head
+	var head LinkedList = LinkedList{value: -1}
 	for list1 != nil {
 		digit = list1.value + list2.value
 		if digit/10 != 0 {
@@ -40,22 +37,12 @@ func AddTwoNums(a, b *LinkedList) *LinkedList {
 		} else {
 			carry = false
 		}
-		if temp == nil {
-			temp = new(LinkedList)
-			if carry {
-				temp.value = digit + 1
-				carry = false
-			} else {
-				temp.value = digit
-			}
-			if head == nil {
-				head = temp
-			}
-			temp = temp.next
+		if carry {
+			insertNode(&head, &LinkedList{value: digit + 1})
+		} else {
+			insertNode(&head, &LinkedList{value: digit})
 		}
-
 		list1 = list1.next
-		list2 = list2.next
 	}
-	return head
+	return &head
 }
