@@ -22,7 +22,7 @@ type ans struct {
 var qs []question = []question{
 	{
 		params{1235, 234},
-		ans{357},
+		ans{1469},
 	},
 	{
 		params{235, 111},
@@ -33,12 +33,16 @@ var qs []question = []question{
 		ans{999},
 	},
 	{
-		params{1235, 234},
-		ans{3575},
+		params{777, 321},
+		ans{1098},
 	},
 	{
 		params{999, 1},
-		ans{00001},
+		ans{1000},
+	},
+	{
+		params{888, 2},
+		ans{890},
 	},
 }
 
