@@ -1,0 +1,6 @@
+### 编译程序：
+没有创建模块时，
+    go build app.go  
+创建了模块时，
+    go mod init firstgo
+    go build

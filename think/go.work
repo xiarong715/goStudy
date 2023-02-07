@@ -1,0 +1,13 @@
+go 1.19
+
+use (
+	./caller
+	./caller2
+	./caller3
+	./interface
+	./log
+	./map
+	./multifile
+	./package
+	./slice
+)

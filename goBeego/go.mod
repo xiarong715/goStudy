@@ -1,4 +1,4 @@
-module gobeego
+module goBeego
 
 go 1.15
 

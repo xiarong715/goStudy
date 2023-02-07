@@ -1,0 +1,15 @@
+go module使用，创建模块，实现在GOPATH外创建项目，使用本地包。
+
+package
+    interf
+    person
+    student
+    
+    main.go
+
+    go.mod
+
+
+    模块名不限定。在最外层目录下执行：go mod init [pack]，生成一个模块。
+    包名与所在文件夹名一致。如 student的包在student文件夹下。
+
