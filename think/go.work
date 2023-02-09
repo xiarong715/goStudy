@@ -1,13 +1,22 @@
 go 1.19
 
 use (
+	./atomic
 	./caller
 	./caller2
 	./caller3
+	./chan
+	./chan2
+	./closure
+	./goroutine
 	./interface
-	./log
 	./map
 	./multifile
+	./mutex
+	./mutex2
+	./once
 	./package
 	./slice
+	./syncmap
+	./writelog
 )

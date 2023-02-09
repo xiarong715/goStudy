@@ -54,3 +54,5 @@ func main() {
 		fmt.Println(k, scoreMap[k])
 	}
 }
+
+// 数值类型、布尔类型、字符串类型、组数类型、结构体类型、指针类型、接口类型、切片类型、Map类型、Chan类型

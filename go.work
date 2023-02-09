@@ -1,0 +1,20 @@
+go 1.20
+
+use (
+    ./goWeb
+    ./goTravel
+    ./21week
+    ./goCore
+    ./goAlgorithmPattern
+    ./goBasics
+    ./goBeego
+    ./goFileServer
+    ./goGoin
+    ./goPlugin
+    ./goRedisPool
+    ./goSSH
+    ./goTest
+    ./goTestFunction
+    ./think
+    ./unknown
+)
