@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"once/singleton"
+	singleton "once/singlet" // 文件夹就是包，当包名与文件夹名不同时，导入包时需要带上包名
 )
 
 func main() {
