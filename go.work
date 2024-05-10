@@ -1,8 +1,9 @@
-go 1.20
+go 1.22.2
 
 use (
 	"./test/test``"
 	./goBeego
+	./goBin2Image
 	./goFileServer
 	./goPlugin
 	./goRedisPool
