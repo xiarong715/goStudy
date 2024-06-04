@@ -5,7 +5,9 @@ use (
 	./goBeego
 	./goBin2Image
 	./goFileServer
+	./goInject/firstInject
 	./goPlugin
+	./goProject
 	./goRedisPool
 	./goSSH
 	./goTravel
