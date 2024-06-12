@@ -4,6 +4,7 @@ use (
 	"./test/test``"
 	./goBeego
 	./goBin2Image
+	./goCore/String/split
 	./goFileServer
 	./goInject/firstInject
 	./goPlugin
