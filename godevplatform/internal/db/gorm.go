@@ -14,6 +14,7 @@ var runnerBeforeDBInit []func() error
 var db *gorm.DB
 
 func init() {
+	log.Println("db gorm")
 	conf.RunAfterConfInit(initDB)
 }
 
@@ -32,6 +33,9 @@ func initDB() error {
 	if err != nil {
 		return err
 	}
+	if err = db.AutoMigrate(model...); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -42,4 +46,8 @@ func addModel(m interface{}) {
 
 func RunBeforeDBInit(f func() error) {
 	runnerBeforeDBInit = append(runnerBeforeDBInit, f)
+}
+
+func ItDB() {
+	log.Println("ItDB")
 }
