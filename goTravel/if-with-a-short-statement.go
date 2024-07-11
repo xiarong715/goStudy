@@ -3,9 +3,10 @@ package main
 import (
 	"log"
 	"math"
+	"testing"
 )
 
-func main() {
+func TestIfWithAShortStatement(t *testing.T) {
 	log.Println(
 		pow(2, 3, 10),
 		pow(3, 3, 20),

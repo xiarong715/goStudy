@@ -1,8 +1,11 @@
 package main
 
-import "log"
+import (
+	"log"
+	"testing"
+)
 
-func main() {
+func TestNamedReuslt(t *testing.T) {
 	log.Println(split(17))
 }
 

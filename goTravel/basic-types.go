@@ -1,8 +1,11 @@
 package main
 
-import "log"
+import (
+	"log"
+	"testing"
+)
 
-func main() {
+func TestMain(t *testing.T) {
 	// bool
 	// string
 	// int int8 int16 int32 int64

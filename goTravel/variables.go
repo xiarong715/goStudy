@@ -1,10 +1,13 @@
 package main
 
-import "log"
+import (
+	"log"
+	"testing"
+)
 
 var c, java, python bool
 
-func main() {
+func TestVariables(t *testing.T) {
 	var i int
 	log.Println(i, c, java, python)
 }

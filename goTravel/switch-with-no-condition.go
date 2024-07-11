@@ -2,15 +2,16 @@ package main
 
 import (
 	"fmt"
+	"testing"
 	"time"
 )
 
-func main() {
-	t := time.Now()
+func TestSwitchWithNoCondition(t *testing.T) {
+	tm := time.Now()
 	switch {
-	case t.Hour() < 12:
+	case tm.Hour() < 12:
 		fmt.Println("Good morning!")
-	case t.Hour() < 17:
+	case tm.Hour() < 17:
 		fmt.Println("Good aternoon.")
 	default:
 		fmt.Println("Good evening.")

@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
-func main() {
+func TestDeferMulti(t testing.T) {
 	fmt.Println("counting")
 	for i := 0; i < 10; i++ {
 		defer fmt.Println(i)

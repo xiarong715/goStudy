@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"log"
 	"math"
+	"testing"
 )
 
-func main() {
+func TestIf(t *testing.T) {
 	log.Println(sqrt(2), sqrt(-4))
 }
 

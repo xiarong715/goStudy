@@ -1,8 +1,11 @@
 package main
 
-import "log"
+import (
+	"log"
+	"testing"
+)
 
-func main() {
+func TestFor(t *testing.T) {
 	for i := 10; i > 0; i-- {
 		log.Print(i)
 	}
@@ -15,6 +18,6 @@ func main() {
 
 	// infinite loop
 	for {
-
+		log.Println("for")
 	}
 }

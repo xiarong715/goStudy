@@ -13,4 +13,5 @@ use (
 	./goSSH
 	./goTravel
 	./goWeb
+	./godevplatform
 )
