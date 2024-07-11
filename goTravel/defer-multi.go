@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestDeferMulti(t testing.T) {
+func TestDeferMulti(t *testing.T) {
 	fmt.Println("counting")
 	for i := 0; i < 10; i++ {
 		defer fmt.Println(i)
