@@ -2,8 +2,9 @@ package main
 
 import (
 	"godevplatform/internal/conf"
-	"godevplatform/internal/db"
+	"godevplatform/internal/server"
 	"log"
+	"net/http"
 	"os"
 	"path"
 )
@@ -25,5 +26,7 @@ func init() {
 
 func main() {
 	log.Println("devplatform")
-	db.ItDB()
+
+	entrance := server.NewEntrance()
+	http.ListenAndServe(":8088", entrance)
 }
