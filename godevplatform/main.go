@@ -18,6 +18,9 @@ func init() {
 	if err = os.Setenv("DATA_PATH", path.Join(dir, "build")); err != nil {
 		log.Fatal(err)
 	}
+	if err = os.Setenv("PATH_PREFIX", "/user"); err != nil {
+		log.Fatal(err)
+	}
 
 	if err := conf.InitConf(); err != nil {
 		log.Fatal("initconf:", err)

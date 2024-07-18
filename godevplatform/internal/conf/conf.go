@@ -6,7 +6,8 @@ import (
 )
 
 type Config struct {
-	DataPath string
+	DataPath   string
+	PathPrefix string
 }
 
 var Conf Config = Config{}
@@ -15,6 +16,11 @@ func fromEnv() error {
 	dataPathEnv := os.Getenv("DATA_PATH")
 	if dataPathEnv != "" {
 		Conf.DataPath = dataPathEnv
+	}
+
+	pathPrefixEnv := os.Getenv("PATH_PREFIX")
+	if pathPrefixEnv != "" {
+		Conf.PathPrefix = pathPrefixEnv
 	}
 	return nil
 }
