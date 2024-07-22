@@ -5,12 +5,20 @@ import (
 	"os"
 )
 
+type cookie struct {
+	CookieName string
+	CookiePath string
+}
+
 type Config struct {
 	DataPath   string
 	PathPrefix string
+	Cookie     cookie
 }
 
-var Conf Config = Config{}
+var Conf Config = Config{
+	Cookie: cookie{CookieName: "lsy", CookiePath: "/"},
+}
 
 func fromEnv() error {
 	dataPathEnv := os.Getenv("DATA_PATH")
@@ -21,6 +29,16 @@ func fromEnv() error {
 	pathPrefixEnv := os.Getenv("PATH_PREFIX")
 	if pathPrefixEnv != "" {
 		Conf.PathPrefix = pathPrefixEnv
+	}
+
+	cookieNameEnv := os.Getenv("COOKIE_NAME")
+	if cookieNameEnv != "" {
+		Conf.Cookie.CookieName = cookieNameEnv
+	}
+
+	cookiePathEnv := os.Getenv("COOKIE_PATH")
+	if cookiePathEnv != "" {
+		Conf.Cookie.CookiePath = cookiePathEnv
 	}
 	return nil
 }
