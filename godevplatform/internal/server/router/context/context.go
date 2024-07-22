@@ -1,13 +1,15 @@
 package context
 
 import (
-	"encoding/json"
 	"net/http"
+
+	json "github.com/json-iterator/go"
 )
 
 type Context struct {
-	W http.ResponseWriter
-	R *http.Request
+	W     http.ResponseWriter
+	R     *http.Request
+	Param json.Any
 }
 
 type resp struct {
