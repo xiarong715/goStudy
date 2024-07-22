@@ -6,18 +6,21 @@ import (
 )
 
 type cookie struct {
-	CookieName string
-	CookiePath string
+	CookieName  string
+	CookieValue string
+	CookiePath  string
 }
 
 type Config struct {
 	DataPath   string
 	PathPrefix string
 	Cookie     cookie
+	Domain     string
 }
 
 var Conf Config = Config{
-	Cookie: cookie{CookieName: "lsy", CookiePath: "/"},
+	Cookie: cookie{CookieName: "lsy", CookieValue: "hello_my_soom_to_2", CookiePath: "/"},
+	Domain: "localhost",
 }
 
 func fromEnv() error {
@@ -36,9 +39,19 @@ func fromEnv() error {
 		Conf.Cookie.CookieName = cookieNameEnv
 	}
 
+	cookieValueEnv := os.Getenv("COOKIE_VALUE")
+	if cookieValueEnv != "" {
+		Conf.Cookie.CookieValue = cookieValueEnv
+	}
+
 	cookiePathEnv := os.Getenv("COOKIE_PATH")
 	if cookiePathEnv != "" {
 		Conf.Cookie.CookiePath = cookiePathEnv
+	}
+
+	domainEnv := os.Getenv("DOMAIN")
+	if domainEnv != "" {
+		Conf.Domain = domainEnv
 	}
 	return nil
 }

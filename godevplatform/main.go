@@ -22,6 +22,10 @@ func init() {
 		log.Fatal(err)
 	}
 
+	if err := os.Setenv("COOKIE_PATH", "/user"); err != nil {
+		log.Fatal(err)
+	}
+
 	if err := conf.InitConf(); err != nil {
 		log.Fatal("initconf:", err)
 	}
